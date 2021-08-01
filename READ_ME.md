@@ -1,2 +1,21 @@
-panel administracji konta
-market research
+Project features:
+- przełączanie giełd/inne api
+- pobieranie aktualnych wartości ze strony
+- napewno,aby pokazywala cene
+- wykresy
+- transakcje
+- historia
+- wyswietlanie TOP/sortowanie
+- maksymalna i minnimalna cena w miesiacu
+- przeliczanie walut
+- wiadomości ze świata  😀
+    - market research
+- wyswietlanie paska z warsdsdatościami np. WIG 20
+- alerty
+- portfel
+- filtry
+- zleć kupno lub sprzedaż gdy wartość jest wybrana
+- panel administracji konta
+- może logowanie uzytkownika
+- zmiana hasla
+- opcja premium
