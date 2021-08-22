@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,5 +37,13 @@ public class WeatherService {
                 .stream()
                 .map(weather -> mapper.fromEntityToDto(weather))
                 .collect(Collectors.toList());
+    }
+
+    public Optional<WeatherDto> findWeatherById(Long id) {
+        var result = weatherRepository.findById(id)
+                .map(weather -> mapper.fromEntityToDto(weather));
+
+        log.info("trying to find object by id: [{}], result: [{}]", id, result);
+        return result;
     }
 }
