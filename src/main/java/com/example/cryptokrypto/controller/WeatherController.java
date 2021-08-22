@@ -22,12 +22,15 @@ public class WeatherController {
     public WeatherController(final WeatherService weatherService) {
         this.weatherService = weatherService;
     }
+
     @GetMapping("/weathers")
-    public List<WeatherDto> getAll(){
+    public List<WeatherDto> getAll() {
         log.info("getAll");
-        return weatherService.getAllWeather();
+        return weatherService.getAllWeathers();
     }
 
+    // /weathers/1
+    // /weathers/99
     @GetMapping("/weathers/{id}")
     public ResponseEntity<WeatherDto>  getWeatherById(@PathVariable("id") Long id) {
         log.info("getWeatherById: [{}]", id);
@@ -36,7 +39,7 @@ public class WeatherController {
         if (result.isPresent()) {
             return new ResponseEntity<>(result.get(), HttpStatus.OK);
         } else {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.notFound().build();
         }
     }
 }
