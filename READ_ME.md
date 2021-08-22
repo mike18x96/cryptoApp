@@ -4,15 +4,15 @@
   - interwał czasu dla odpytań
   - zakres czasu z którego chcemy zobaczyć kurs
   - waluty:
-      - Crypto:
-      - BTC
-      - ETH
-      - Fiat:
-      - USD
-      - EURO
-      - PLN
-      - złoto
-      - srebro
+    - Crypto:
+    - BTC
+    - ETH
+    - Fiat:
+    - USD
+    - EURO
+    - PLN
+    - złoto
+    - srebro
   - https://binance-docs.github.io/apidocs/spot/en/
   - https://bittrex.github.io/api/v3
   - https://coinmarketcap.com/api/
@@ -27,7 +27,7 @@
     - serwis webowy (thymeleaf)
     - serwis restowy (dla Angulara)
     - UI Angular
-  
+
 - wykresy: 1 - 3 sda days
   - cena - czas
   - rozny kolor w zaleznosci od tego czy jest tendencja spadkowa czy wzrostowa
@@ -53,7 +53,7 @@
 - maksymalna i minnimalna cena w miesiacu
 - przeliczanie walut
 - wiadomości ze świata  😀
-    - market research
+  - market research
 - wyswietlanie paska z wartościami np. WIG 20
 - alerty
 - portfel
@@ -63,3 +63,25 @@
 - może logowanie uzytkownika
 - zmiana hasla
 - opcja premium
+
+#### MVC (Model, View, Controller)
+V - view
+C - controller
+M - model (data + operations)
+
+View - dto
+Controller - returns dto
+Service - operations
+Repository - data (entities)
+
+#### Responsibilities
+
+Controller
+- returns views/data
+- handle queries
+
+Service
+- business logic :)
+
+Repository
+- data management
