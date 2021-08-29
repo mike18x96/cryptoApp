@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -42,11 +43,16 @@ public class WeatherController {
     }
 
     @PostMapping("/weathers")
-    public WeatherDto createWeatherForecast(@RequestBody WeatherDto newWeather){
-
+    public ResponseEntity<WeatherDto> createWeatherForecast(@RequestBody WeatherDto newWeather) {
         log.info("trying to create new weather forecast: [{}]", newWeather);
+//        return new ResponseEntity<>(weatherService.createNewWeatherForecast(newWeather), HttpStatus.CREATED);
+        var body = weatherService.createNewWeatherForecast(newWeather);
 
-        return  weatherService.createNewWeatherForecast(newWeather);
+//        MultiValueMap<String, String> headers = new HttpHeaders();
+//        headers.add(HttpHeaders.LOCATION, "/api/weathers/" + body.id());
+//        new ResponseEntity<WeatherDto>(body, headers, HttpStatus.CREATED);
+
+        return ResponseEntity.created(URI.create("/api/weathers/" + body.id())).body(body);
     }
 
 }

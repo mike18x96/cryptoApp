@@ -46,7 +46,7 @@ public class WeatherService {
         return result;
     }
 
-    public WeatherDto createNewWeatherForecast(WeatherDto newWeather){
+    public WeatherDto createNewWeatherForecast(WeatherDto newWeather) {
         Weather entityToSave = mapper.fromDtoToEntity(newWeather);
         Weather saved = weatherRepository.save(entityToSave);
         log.info("creating entity [{}] from provided dto [{}]", saved, newWeather);
