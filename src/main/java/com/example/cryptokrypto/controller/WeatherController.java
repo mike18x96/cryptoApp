@@ -5,15 +5,13 @@ import com.example.cryptokrypto.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+
 @Slf4j
 public class WeatherController {
 
@@ -41,5 +39,11 @@ public class WeatherController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping("/weathers")
+    public WeatherDto createWeatherForecast(@RequestBody WeatherDto newWeather){
+        log.info("traying to create new weather forecast: [{}]", newWeather);
+        return null;
     }
 }
