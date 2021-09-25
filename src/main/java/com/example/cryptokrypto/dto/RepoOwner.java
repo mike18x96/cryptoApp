@@ -5,6 +5,4 @@ public record RepoOwner(
         Long id,
         String type
 ) {
-
-
 }
