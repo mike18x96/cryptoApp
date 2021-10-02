@@ -188,4 +188,16 @@ class CollectionTest {
         System.out.println(s);
         assertEquals("80text100", s);
     }
+    @Test
+    void multilineStringTest() {
+        String multi = """
+                Ala ma kota
+              i kot ma Ale
+            """;
+        String oldMulti = ""
+                + "    Ala ma kota\n"
+                + "  i kot ma Ale\n";
+
+        assertEquals(multi, oldMulti);
+    }
 }
