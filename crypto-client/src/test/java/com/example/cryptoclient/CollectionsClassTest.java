@@ -33,7 +33,7 @@ public class CollectionsClassTest {
         ArrayList<String> strings = new ArrayList<>();
         System.out.println("strings class: " + strings.getClass()); // java.util.ArrayList<String> ???
         addElementToCollection(strings);
-//        String name = strings.get(0);
+        String name = strings.get(0);
 
         ArrayList objects = new ArrayList();
         System.out.println("objects class: " + objects.getClass());
