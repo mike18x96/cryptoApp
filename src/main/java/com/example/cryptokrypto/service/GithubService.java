@@ -58,13 +58,15 @@ public class GithubService implements CommandLineRunner {
     public List<GithubRepoV2> readCustomGitHubRepo() {
         var response = restTemplate.getForObject(githubUrl, GithubRepoV2[].class);
         var result = Arrays.asList(response);
+
         log.info("readCustomGitHubRepo - result: {}", result);
         return result;
     }
 
-        @Override
+    @Override
     public void run(String... args) throws Exception {
         readGitHubRepos();
-        readGitHubReposV2();
+        readCustomGitHubRepo();
+//        readGitHubReposV2();
     }
 }
