@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WeatherService} from "../../services/weather.service";
 
 @Component({
@@ -8,11 +8,19 @@ import {WeatherService} from "../../services/weather.service";
 })
 export class WeatherComponent implements OnInit {
   name: string = ""
+  response: any | null
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private weatherService: WeatherService) {
+  }
 
   ngOnInit(): void {
-    this.name=this.weatherService.myName()
+    this.name = this.weatherService.myName()
+    this.weatherService.readWeatherForecasts()
+      .subscribe(value => {
+        this.response = value
+        console.log(`received value: ${value}`)
+      })
+    console.log('ngOnInit completed');
   }
 
 }

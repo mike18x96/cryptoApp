@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { weatherApi } from '../models/links';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  constructor() {}
+  constructor(private http: HttpClient) { }
 
-  myName(): string{
+  myName(): string {
     return "artur"
   }
 
+  readWeatherForecasts(): any {
+    this.http.get(weatherApi)
+  }
 }
