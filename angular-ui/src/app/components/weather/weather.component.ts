@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {WeatherService} from "../../services/weather.service";
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../../services/weather.service';
+import { SpringWeatherResponse } from '../../models/weather.data';
 
 @Component({
   selector: 'app-weather',
@@ -8,10 +9,10 @@ import {WeatherService} from "../../services/weather.service";
 })
 export class WeatherComponent implements OnInit {
   name: string = ""
-  response: any | null
+  response!: Array<SpringWeatherResponse>
+  // response!: SpringWeatherResponse[]
 
-  constructor(private weatherService: WeatherService) {
-  }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     this.name = this.weatherService.myName()
