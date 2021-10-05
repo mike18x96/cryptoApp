@@ -11,7 +11,6 @@ import pl.cryptoclient.service.CryptoClientService;
 @RequestMapping("/weather")
 @Slf4j
 public class WebWeatherController {
-
     private final CryptoClientService cryptoClientService;
 
     public WebWeatherController(final CryptoClientService cryptoClientService) {
