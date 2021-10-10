@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { githubUrl, homeUrl, weatherUrl } from './models/links';
+import { githubUrl, homeUrl, weatherFormUrl, weatherUrl } from './models/links';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,5 @@ export class AppComponent {
   githubLink = githubUrl
   weatherLink = weatherUrl
   homeLink = homeUrl
+  weatherFormLink = weatherFormUrl
 }

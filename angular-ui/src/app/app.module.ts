@@ -12,11 +12,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { githubUrl, weatherUrl } from './models/links';
+import { githubUrl, weatherFormUrl, weatherUrl } from './models/links';
+import { WeatherFormComponent } from './components/weather-form/weather-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: githubUrl, component: GithubComponent },
   { path: weatherUrl, component: WeatherComponent },
+  { path: weatherFormUrl, component: WeatherFormComponent },
   { path: '', redirectTo: weatherUrl, pathMatch: 'full'},
   { path: '**', component: NotFoundComponent }
 ]
@@ -26,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     WeatherComponent,
     GithubComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    WeatherFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatButtonToggleModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
