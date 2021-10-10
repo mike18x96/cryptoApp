@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { githubUrl, weatherFormUrl, weatherUrl } from './models/links';
 import { WeatherFormComponent } from './components/weather-form/weather-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: githubUrl, component: GithubComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatButtonToggleModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
